@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BootCell</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">BootCell</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> BootCell</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><img src="https://web-cell.dev/WebCell-0.f1ffd28b.png" alt="WebCell"></p>
+				<a href="#bootcell" id="bootcell" style="color: inherit; text-decoration: none;">
+					<h1>BootCell</h1>
+				</a>
+				<p><a href="https://www.webcomponents.org/">Web Components</a> UI library based on <a href="https://web-cell.dev/">WebCell v2</a> &amp; <a href="https://getbootstrap.com/">BootStrap v4</a></p>
+				<p><a href="https://david-dm.org/EasyWebApp/BootCell"><img src="https://david-dm.org/EasyWebApp/BootCell.svg" alt="NPM Dependency"></a>
+				<a href="https://travis-ci.com/EasyWebApp/BootCell"><img src="https://travis-ci.com/EasyWebApp/BootCell.svg?branch=master" alt="Build Status"></a></p>
+				<p><a href="https://nodei.co/npm/boot-cell/"><img src="https://nodei.co/npm/boot-cell.png?downloads=true&downloadRank=true&stars=true" alt="NPM"></a></p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-shell">npm install boot-cell web-cell \
+    classnames iterable-observer \
+    marked turndown turndown-plugin-gfm markdown-ime</code></pre>
+				<p><code>index.html</code></p>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+    <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+    <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.css"</span>
+/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+    <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+    <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"</span>
+/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">link</span>
+    <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>
+    <span class="hljs-attr">href</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/github-markdown-css@3.0.1/github-markdown.min.css"</span>
+/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://polyfill.io/v3/polyfill.min.js?flags=gated&amp;features=Object.fromEntries%2CArray.prototype.flat%2CIntersectionObserver%2CIntersectionObserverEntry"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/dialog-polyfill@0.5.0/dist/dialog-polyfill.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/custom-elements-es5-adapter.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations-next.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<a href="#components" id="components" style="color: inherit; text-decoration: none;">
+					<h2>Components</h2>
+				</a>
+				<a href="#content" id="content" style="color: inherit; text-decoration: none;">
+					<h3>Content</h3>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/listgroupprops.html">ListGroup</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/tableprops.html">Table</a></li>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#inputcellprops">InputCell</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/cardprops.html">Card</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/mediaitemprops.html">MediaItem</a></li>
+					<li><a href="https://web-cell.dev/BootCell/classes/edgedetector.html">EdgeDetector</a></li>
+					<li><a href="https://web-cell.dev/BootCell/classes/splitview.html">SplitView</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/accordionprops.html">AccordionList</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/tablistprops.html">TabList</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/carouselprops.html">CarouselView</a></li>
+				</ol>
+				<a href="#navigator" id="navigator" style="color: inherit; text-decoration: none;">
+					<h3>Navigator</h3>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/breadcrumbprops.html">BreadCrumb</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/paginationprops.html">Pagination</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/navprops.html">Nav</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/navbarprops.html">NavBar</a></li>
+				</ol>
+				<a href="#prompt" id="prompt" style="color: inherit; text-decoration: none;">
+					<h3>Prompt</h3>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/spinnerprops.html">Spinner</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/spinnerboxprops.html">SpinnerBox</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/alertprops.html">AlertBox</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/modaldialogprops.html">ModalDialog</a></li>
+				</ol>
+				<a href="#form" id="form" style="color: inherit; text-decoration: none;">
+					<h3>Form</h3>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/buttonprops.html">Button</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/togglefieldprops.html">ToggleField</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/togglegroupprops.html">ToggleGroup</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/fieldprops.html">FormField</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/fileinputprops.html">FileInput</a></li>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/markdowneditorprops.html">MarkdownEditor</a></li>
+				</ol>
+				<a href="#advanced" id="advanced" style="color: inherit; text-decoration: none;">
+					<h3>Advanced</h3>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/interfaces/countdownprops.html">CountDown</a></li>
+				</ol>
+				<a href="#constants" id="constants" style="color: inherit; text-decoration: none;">
+					<h2>Constants</h2>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/enums/color.html">Color</a></li>
+					<li><a href="https://web-cell.dev/BootCell/enums/theme.html">Theme</a></li>
+					<li><a href="https://web-cell.dev/BootCell/enums/size.html">Size</a></li>
+					<li><a href="https://web-cell.dev/BootCell/enums/status.html">Status</a></li>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#colornames">ColorNames</a></li>
+				</ol>
+				<a href="#utilities" id="utilities" style="color: inherit; text-decoration: none;">
+					<h2>Utilities</h2>
+				</a>
+				<ol>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#uniqueid">uniqueID()</a></li>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#parsetexttable">parseTextTable()</a></li>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#parsedom">parseDOM()</a></li>
+					<li><a href="https://web-cell.dev/BootCell/globals.html#inserttocursor">insertToCursor()</a></li>
+					<li><a href="https://web-cell.dev/BootCell/classes/safeturndown.html">SafeTurnDown</a></li>
+				</ol>
+				<a href="#theme" id="theme" style="color: inherit; text-decoration: none;">
+					<h2>Theme</h2>
+				</a>
+				<p>Replace <strong>BootStrap official CSS</strong> file with these 3th-party libraries&#39;s directly:</p>
+				<ul>
+					<li><a href="https://bootswatch.com/">https://bootswatch.com/</a></li>
+					<li><a href="https://fezvrasta.github.io/bootstrap-material-design/">https://fezvrasta.github.io/bootstrap-material-design/</a></li>
+					<li><a href="https://daemonite.github.io/material/">https://daemonite.github.io/material/</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum">
+						<a href="enums/color.html" class="tsd-kind-icon">Color</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/size.html" class="tsd-kind-icon">Size</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/status.html" class="tsd-kind-icon">Status</a>
+					</li>
+					<li class=" tsd-kind-enum">
+						<a href="enums/theme.html" class="tsd-kind-icon">Theme</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/accordionlist.html" class="tsd-kind-icon">Accordion<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/alertbox.html" class="tsd-kind-icon">Alert<wbr>Box</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/carouselview.html" class="tsd-kind-icon">Carousel<wbr>View</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/countdown.html" class="tsd-kind-icon">Count<wbr>Down</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/dropmenu.html" class="tsd-kind-icon">Drop<wbr>Menu</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/edgedetector.html" class="tsd-kind-icon">Edge<wbr>Detector</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/fileinput.html" class="tsd-kind-icon">File<wbr>Input</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/markdowneditor.html" class="tsd-kind-icon">Markdown<wbr>Editor</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/modaldialog.html" class="tsd-kind-icon">Modal<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/navbar.html" class="tsd-kind-icon">Nav<wbr>Bar</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/pagination.html" class="tsd-kind-icon">Pagination</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/safeturndown.html" class="tsd-kind-icon">Safe<wbr>Turn<wbr>Down</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/splitview.html" class="tsd-kind-icon">Split<wbr>View</a>
+					</li>
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="classes/tablist.html" class="tsd-kind-icon">Tab<wbr>List</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/accordionprops.html" class="tsd-kind-icon">Accordion<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/alertprops.html" class="tsd-kind-icon">Alert<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/basefieldprops.html" class="tsd-kind-icon">Base<wbr>Field<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/breadcrumbprops.html" class="tsd-kind-icon">Breadcrumb<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/buttonprops.html" class="tsd-kind-icon">Button<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/cardprops.html" class="tsd-kind-icon">Card<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/carouselprops.html" class="tsd-kind-icon">Carousel<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/countdownprops.html" class="tsd-kind-icon">Count<wbr>Down<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dropmenuitem.html" class="tsd-kind-icon">Drop<wbr>Menu<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/dropmenuprops.html" class="tsd-kind-icon">Drop<wbr>Menu<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/edgeevent.html" class="tsd-kind-icon">Edge<wbr>Event</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fieldprops.html" class="tsd-kind-icon">Field<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/fileinputprops.html" class="tsd-kind-icon">File<wbr>Input<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/htmlhyperlinkprops.html" class="tsd-kind-icon">HTMLHyper<wbr>Link<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/htmlprops.html" class="tsd-kind-icon">HTMLProps</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/listgroupprops.html" class="tsd-kind-icon">List<wbr>Group<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/mediaitemprops.html" class="tsd-kind-icon">Media<wbr>Item<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/modaldialogprops.html" class="tsd-kind-icon">Modal<wbr>Dialog<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/navbarprops.html" class="tsd-kind-icon">Nav<wbr>Bar<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/navprops.html" class="tsd-kind-icon">Nav<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/paginationprops.html" class="tsd-kind-icon">Pagination<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/spinnerboxprops.html" class="tsd-kind-icon">Spinner<wbr>Box<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/spinnerprops.html" class="tsd-kind-icon">Spinner<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/tablistprops.html" class="tsd-kind-icon">Tab<wbr>List<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/tablecellprops.html" class="tsd-kind-icon">Table<wbr>Cell<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/tableprops.html" class="tsd-kind-icon">Table<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/togglefieldprops.html" class="tsd-kind-icon">Toggle<wbr>Field<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/togglegroupprops.html" class="tsd-kind-icon">Toggle<wbr>Group<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/webcellprops.html" class="tsd-kind-icon">Web<wbr>Cell<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#colornames" class="tsd-kind-icon">Color<wbr>Names</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#edgeside" class="tsd-kind-icon">Edge<wbr>Side</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#inputcellprops" class="tsd-kind-icon">Input<wbr>Cell<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#breadcrumb" class="tsd-kind-icon">Bread<wbr>Crumb</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#button" class="tsd-kind-icon">Button</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#card" class="tsd-kind-icon">Card</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#formfield" class="tsd-kind-icon">Form<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#inputcell" class="tsd-kind-icon">Input<wbr>Cell</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#listgroup" class="tsd-kind-icon">List<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#mediaitem" class="tsd-kind-icon">Media<wbr>Item</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#nav" class="tsd-kind-icon">Nav</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#navlink" class="tsd-kind-icon">Nav<wbr>Link</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#spinner" class="tsd-kind-icon">Spinner</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#spinnerbox" class="tsd-kind-icon">Spinner<wbr>Box</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#table" class="tsd-kind-icon">Table</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#togglefield" class="tsd-kind-icon">Toggle<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#togglegroup" class="tsd-kind-icon">Toggle<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#inserttocursor" class="tsd-kind-icon">insert<wbr>ToCursor</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsedom" class="tsd-kind-icon">parseDOM</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#parsetexttable" class="tsd-kind-icon">parse<wbr>Text<wbr>Table</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#uniqueid" class="tsd-kind-icon">uniqueID</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#walkdom" class="tsd-kind-icon">walkDOM</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
